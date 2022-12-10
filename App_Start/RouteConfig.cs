@@ -24,6 +24,13 @@ namespace BoitMail
                defaults: new { controller = "ListMails", action = "Index", id = UrlParameter.Optional }
            );
             routes.MapRoute(
+               name: "Listsends",
+               url: "{controller}/{action}/Listsends",
+               defaults: new { controller = "Listsends", action = "Index", id = UrlParameter.Optional }
+            
+               
+               );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

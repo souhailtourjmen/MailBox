@@ -40,6 +40,7 @@ namespace BoitMail.Controllers
         // GET: Mails/Create
         public ActionResult Create()
         {
+            //ViewBag.Id = new SelectList(db.Mails, "Id", "to");
             return View();
         }
 
@@ -50,11 +51,21 @@ namespace BoitMail.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,to,_object,body")] Mail mail)
         {
+            DateTime dateTime = DateTime.Now;
+            Random rand = new Random();
             if (ModelState.IsValid)
             {
+                mail.Id = rand.Next(9999) + 1;
                 db.Mails.Add(mail);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+
+                Listsend listsend = new Listsend();
+                listsend.Id = mail.Id;
+                listsend.Idmail = mail.Id;
+                listsend.datemail = dateTime;
+                db.Listsends.Add(listsend);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index", "ListMails");
             }
 
             return View(mail);

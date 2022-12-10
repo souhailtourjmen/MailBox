@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mon application ASP.NET</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/costume.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -30,13 +31,23 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
+    <main>
+        <header>
+            <ul class="nav navbar-nave">
+                <li>@Html.ActionLink("Boite de réception", "Index", "ListMails")</li>
+                <li>@Html.ActionLink("Messages envoyés", "Index", "Listsends")</li>
+                <li>@Html.ActionLink("Mail", "Index", "Mails")</li>
+            </ul>
+        </header>
+        <section class="container body-content">
+            @RenderBody()
+        </section>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Mon application ASP.NET</p>
         </footer>
-    </div>
+
+    </main>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
