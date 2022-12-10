@@ -19,8 +19,11 @@ namespace BoitMail.Data
         {
         }
 
-        public System.Data.Entity.DbSet<BoitMail.Models.ListMail> ListMails { get; set; }
-
         public System.Data.Entity.DbSet<BoitMail.Models.Mail> Mails { get; set; }
+        public System.Data.Entity.DbSet<BoitMail.Models.ListMail> ListMails { get; set; }
+        public System.Data.Entity.DbSet<BoitMail.Models.Listdraft> Listdrafts { get; set; }
+        public System.Data.Entity.DbSet<BoitMail.Models.Listsend> Listsends { get; set; }
+
+
     }
 }

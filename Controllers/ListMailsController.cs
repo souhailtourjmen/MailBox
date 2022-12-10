@@ -70,7 +70,7 @@ namespace BoitMail.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ListMail listMail = await db.ListMails.FindAsync(id);
+            ListMail listMail = await db.ListMails.FindAsync(1);
             if (listMail == null)
             {
                 return HttpNotFound();
@@ -88,7 +88,7 @@ namespace BoitMail.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(listMail).State = EntityState.Modified;
+                db.Entry(listMail).State = System.Data.Entity.EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }

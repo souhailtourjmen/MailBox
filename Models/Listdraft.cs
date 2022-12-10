@@ -7,7 +7,7 @@ namespace BoitMail.Models
     using System.Data.Entity.Spatial;
 
     [Table("Listdraft")]
-    public  class Listdraft
+    public partial class Listdraft
     {
         [Key]
         [Column(Order = 0)]

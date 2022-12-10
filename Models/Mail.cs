@@ -26,7 +26,8 @@ namespace BoitMail.Models
         [StringLength(10)]
         public string _object { get; set; }
 
-        public float? body { get; set; }
+        [Column(TypeName = "text")]
+        public string body { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Listdraft> Listdraft { get; set; }
