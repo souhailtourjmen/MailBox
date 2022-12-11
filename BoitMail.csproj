@@ -209,11 +209,13 @@
     <Content Include="App_Data\Boitmails_log.ldf">
       <DependentUpon>Boitmails.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-pulse.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\costume.css" />
+    <Content Include="Content\images\backgroud.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
