@@ -186,6 +186,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListdraftsController.cs" />
     <Compile Include="Controllers\ListMailsController.cs" />
     <Compile Include="Controllers\ListsendsController.cs" />
     <Compile Include="Controllers\MailsController.cs" />
@@ -216,12 +217,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\costume.css" />
     <Content Include="Content\images\backgroud.jpg" />
+    <Content Include="Content\images\google.png" />
+    <Content Include="Content\images\logo-gmail.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\images\google.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -282,6 +286,12 @@
     <Content Include="Views\Listsends\Details.cshtml" />
     <Content Include="Views\Listsends\Edit.cshtml" />
     <Content Include="Views\Listsends\Index.cshtml" />
+    <Content Include="Views\Shared\LinksPartial.cshtml" />
+    <Content Include="Views\Listdrafts\Create.cshtml" />
+    <Content Include="Views\Listdrafts\Delete.cshtml" />
+    <Content Include="Views\Listdrafts\Details.cshtml" />
+    <Content Include="Views\Listdrafts\Edit.cshtml" />
+    <Content Include="Views\Listdrafts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

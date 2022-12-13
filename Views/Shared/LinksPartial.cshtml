@@ -1,0 +1,39 @@
+﻿
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+<div class="indiv">
+    <span class="material-symbols-outlined inbox">
+        add
+    </span>@Html.ActionLink("Compose", "Create", "Mails")
+</div>
+<ul class="nav navbar-nave">
+    
+    <li>
+        <span class="material-symbols-outlined inbox">
+            inbox
+        </span> @Html.ActionLink(" Boite de réception", "Index", "ListMails")
+    </li>
+    <li>
+        <span class="material-symbols-outlined inbox">
+            send
+        </span>
+        @Html.ActionLink("Messages envoyés", "Index", "Listsends")
+    </li>
+    <li>
+        <span class="material-symbols-outlined inbox">
+            draft
+        </span>
+        @Html.ActionLink("Drafts ", "Index", "Listdrafts")
+    </li>
+
+</ul>
+
+
+    }
+
+}
+

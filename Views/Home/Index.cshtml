@@ -3,7 +3,18 @@
 }
 
 <div class="jumbotron">
-    <h1>Mailbox</h1>
-    <p class="lead">Une messagerie sécurisée, intelligente et facile à utiliser</p>
-    <p><a href="/Account/Login/Mails" class="btn btn-primary btn-lg">Se Connecter &raquo;</a></p>
+   <div class="feature__chapter">
+       <div class="eature__chapter__title">
+           <h2>Une messagerie sécurisée, intelligente et facile à utiliser </h2>
+       </div>
+       <div class="feature__chapter__body">
+           <p>Gagnez en efficacité avec Gmail, qui intègre désormais Google Chat, Google Meet et d'autres outils. </p>
+       </div>
+       <div class="feature__chapter__buttons">
+           @Html.Partial("_LoginPartial")
+       </div>
+   </div>
+    <div class="feature__image">
+        <img src="~/Content/images/google.png" alt="google image" />
+    </div>
 </div>
