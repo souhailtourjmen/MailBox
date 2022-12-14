@@ -276,21 +276,9 @@
     <Content Include="Views\Mails\Details.cshtml" />
     <Content Include="Views\Mails\Edit.cshtml" />
     <Content Include="Views\Mails\Index.cshtml" />
-    <Content Include="Views\ListMails\Create.cshtml" />
-    <Content Include="Views\ListMails\Delete.cshtml" />
-    <Content Include="Views\ListMails\Details.cshtml" />
-    <Content Include="Views\ListMails\Edit.cshtml" />
     <Content Include="Views\ListMails\Index.cshtml" />
-    <Content Include="Views\Listsends\Create.cshtml" />
-    <Content Include="Views\Listsends\Delete.cshtml" />
-    <Content Include="Views\Listsends\Details.cshtml" />
-    <Content Include="Views\Listsends\Edit.cshtml" />
     <Content Include="Views\Listsends\Index.cshtml" />
     <Content Include="Views\Shared\LinksPartial.cshtml" />
-    <Content Include="Views\Listdrafts\Create.cshtml" />
-    <Content Include="Views\Listdrafts\Delete.cshtml" />
-    <Content Include="Views\Listdrafts\Details.cshtml" />
-    <Content Include="Views\Listdrafts\Edit.cshtml" />
     <Content Include="Views\Listdrafts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

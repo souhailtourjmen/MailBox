@@ -49,12 +49,15 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Envoiye" class="btn btn-default" />
             </div>
+            <div class="col-md-offset-2 col-md-10">
+                <button name="draft" value="draft" class="btn btn-default" > Draft </button>
+            </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index" ,"ListMails")
 </div>
 
 @section Scripts {

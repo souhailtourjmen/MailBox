@@ -103,6 +103,7 @@ header {
 
 .body-content {
     grid-area: body-content;
+    min-height: 400px;
 }
 
 footer {
@@ -139,14 +140,14 @@ footer {
     flex-direction: row;
     align-items: center;
 }
-    .nav > li:hover a, .nav > li:hover {
-        background-color: var(--redcolor);
-        color: var(--bgheader);
-        border-radius:0 15px 15px 0;
-    }
-        .nav > li:hover span{
-            color:var(--bgheader);
-        }
+#navhoriz > li:hover a, #navhoriz > li:hover {
+    background-color: var(--redcolor);
+    color: var(--bgheader);
+    border-radius: 0 15px 15px 0;
+}
+#navhoriz > li:hover span {
+    color: var(--bgheader);
+}
 
         .inbox {
             color: grey
@@ -171,3 +172,6 @@ footer {
         .indiv:hover a, .indiv:hover span {
             color: var(--texttitlecolor)
         }
+#logoutForm {
+    border-right: 1px solid var(--bghovercolor);
+}

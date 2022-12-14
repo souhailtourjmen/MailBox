@@ -23,103 +23,29 @@ namespace BoitMail.Controllers
             return View(await listdrafts.ToListAsync());
         }
 
-        // GET: Listdrafts/Details/5
+        // GET: Mails/Details/id
         public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Listdraft listdraft = await db.Listdrafts.FindAsync(id);
-            if (listdraft == null)
-            {
-                return HttpNotFound();
-            }
-            return View(listdraft);
+            string url = "/Mails/Details/" + id + Request.QueryString["redirect_url"];
+
+            return Redirect(url);
+
         }
 
-        // GET: Listdrafts/Create
-        public ActionResult Create()
-        {
-            ViewBag.Id = new SelectList(db.Mails, "Id", "to");
-            return View();
-        }
-
-        // POST: Listdrafts/Create
-        // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
-        // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Idmail,datemail")] Listdraft listdraft)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Listdrafts.Add(listdraft);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Id = new SelectList(db.Mails, "Id", "to", listdraft.Id);
-            return View(listdraft);
-        }
-
-        // GET: Listdrafts/Edit/5
+        // GET: Mails/Edit/id
         public async Task<ActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Listdraft listdraft = await db.Listdrafts.FindAsync(id);
-            if (listdraft == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Id = new SelectList(db.Mails, "Id", "to", listdraft.Id);
-            return View(listdraft);
+            string url = "/Mails/Edit/" + id + Request.QueryString["redirect_url"];
+
+            return Redirect(url);
         }
 
-        // POST: Listdrafts/Edit/5
-        // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
-        // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Idmail,datemail")] Listdraft listdraft)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(listdraft).State = System.Data.Entity.EntityState.Modified;
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Id = new SelectList(db.Mails, "Id", "to", listdraft.Id);
-            return View(listdraft);
-        }
-
-        // GET: Listdrafts/Delete/5
+        // GET: Mails/Delete/id
         public async Task<ActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Listdraft listdraft = await db.Listdrafts.FindAsync(id);
-            if (listdraft == null)
-            {
-                return HttpNotFound();
-            }
-            return View(listdraft);
-        }
+            string url = "/Mails/Delete/" + id + Request.QueryString["redirect_url"];
 
-        // POST: Listdrafts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
-        {
-            Listdraft listdraft = await db.Listdrafts.FindAsync(id);
-            db.Listdrafts.Remove(listdraft);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return Redirect(url);
         }
 
         protected override void Dispose(bool disposing)

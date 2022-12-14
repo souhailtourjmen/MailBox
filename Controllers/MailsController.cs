@@ -49,7 +49,7 @@ namespace BoitMail.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,to,_object,body")] Mail mail)
+        public async Task<ActionResult> Create(String draft ,[Bind(Include = "Id,to,_object,body")] Mail mail)
         {
             DateTime dateTime = DateTime.Now;
             Random rand = new Random();
@@ -58,13 +58,26 @@ namespace BoitMail.Controllers
                 mail.Id = rand.Next(9999) + 1;
                 db.Mails.Add(mail);
                 await db.SaveChangesAsync();
+                if (draft== "draft")
+                {
+                    Listdraft listdraft = new Listdraft();
+                    listdraft.Id = mail.Id;
+                    listdraft.Idmail = mail.Id;
+                    listdraft.datemail = dateTime;
+                    db.Listdrafts.Add(listdraft);
+                    await db.SaveChangesAsync();
 
-                Listsend listsend = new Listsend();
-                listsend.Id = mail.Id;
-                listsend.Idmail = mail.Id;
-                listsend.datemail = dateTime;
-                db.Listsends.Add(listsend);
-                await db.SaveChangesAsync();
+                }
+                else
+                {
+                    Listsend listsend = new Listsend();
+                    listsend.Id = mail.Id;
+                    listsend.Idmail = mail.Id;
+                    listsend.datemail = dateTime;
+                    db.Listsends.Add(listsend);
+                    await db.SaveChangesAsync();
+                }
+               
                 return RedirectToAction("Index", "ListMails");
             }
 
